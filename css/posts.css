@@ -8,16 +8,20 @@ body {
 img {
 	display: block;
 	position: relative;
-	right: -45%;
+	right: -30%;
 }
 .parent {
-	position: absolute;
-	right: 45%;
+	position: relative;
+	/*right: 50%;*/
+	margin-left: auto;
+	margin-right: auto;
 }
 .box{
-    width: 600px;
-    height: 400px;
+    width: 1000px;
+    height: 500px;
     background-color: white;
     border: solid 1px silver;
-    margin: 150px 100px 100px 100px;*/
+    margin-left: auto; 
+    margin-right: auto;
+
 }
