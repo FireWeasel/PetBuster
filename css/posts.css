@@ -10,18 +10,18 @@ img {
 	position: relative;
 	right: -30%;
 }
-.parent {
+.title {
 	position: relative;
 	/*right: 50%;*/
 	margin-left: auto;
 	margin-right: auto;
 }
-.box{
+.container{
     width: 1000px;
-    height: 500px;
-    background-color: white;
+    height: 700px;
+    background-color: rgba(255,255,255,0.5);
     border: solid 1px silver;
     margin-left: auto; 
     margin-right: auto;
-
+	border-radius: 25px;
 }
