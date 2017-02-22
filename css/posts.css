@@ -10,13 +10,15 @@ img {
 	position: relative;
 	right: -30%;
 }
+
 .title {
 	position: relative;
 	/*right: 50%;*/
 	margin-left: auto;
 	margin-right: auto;
 }
-.container{
+
+#container{
     width: 1000px;
     height: 700px;
     background-color: rgba(255,255,255,0.5);
@@ -24,4 +26,14 @@ img {
     margin-left: auto; 
     margin-right: auto;
 	border-radius: 25px;
+	position: relative;
+}
+
+.post-box {
+	width: 700px;
+	height: 350px;
+	background-color: rgba(255,255,255,0.7);
+	border: solid 1px silver;
+	border-radius: 25px;
+	position: absolute;
 }
