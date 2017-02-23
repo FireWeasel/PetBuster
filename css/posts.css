@@ -28,11 +28,21 @@ img {
 	position: relative;
 }
 
-.post-box {
-	width: 700px;
-	height: 350px;
+.post-box-1 {
+	width: 900px;
+	height: 150px;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
 	position: absolute;
+	margin: 50px 50px 50px 50px;
+}
+.post-box-2 {
+	width: 900px;
+	height: 150px;
+	background-color: rgba(255,255,255,0.7);
+	border: solid 1px silver;
+	border-radius: 25px;
+	position: absolute;
+	margin: 300px 50px 300px 50px;
 }
