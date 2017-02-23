@@ -1,0 +1,48 @@
+body {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/posts-page-background.jpg"); 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+img {
+	display: block;
+	position: relative;
+	right: -60%;
+	}
+
+.title {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#container{
+    width: 1000px;
+    height: 700px;
+    background-color: rgba(255,255,255,0.5);
+    border: solid 1px silver;
+    margin-left: auto; 
+    margin-right: auto;
+	border-radius: 25px;
+	position: relative;
+}
+
+.post-box-1 {
+	width: 900px;
+	height: 150px;
+	background-color: rgba(255,255,255,0.7);
+	border: solid 1px silver;
+	border-radius: 25px;
+	position: absolute;
+	margin: 50px 50px 50px 50px;
+}
+.post-box-2 {
+	width: 900px;
+	height: 150px;
+	background-color: rgba(255,255,255,0.7);
+	border: solid 1px silver;
+	border-radius: 25px;
+	position: absolute;
+	margin: 300px 50px 300px 50px;
+}
