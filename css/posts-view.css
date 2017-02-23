@@ -30,19 +30,30 @@ img {
 
 .post-box-1 {
 	width: 900px;
-	height: 150px;
+	height: 600px;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
 	position: absolute;
 	margin: 50px 50px 50px 50px;
 }
+
 .post-box-2 {
-	width: 900px;
-	height: 150px;
-	background-color: rgba(255,255,255,0.7);
+	width: 790px;
+	height: 100px;
+	background-color: rgba(255,255,255,0.5);
 	border: solid 1px silver;
 	border-radius: 25px;
 	position: absolute;
-	margin: 300px 50px 300px 50px;
+	margin: 250px 50px 300px 50px;
+}
+
+input {
+	width: 500px;
+	height: 50px;
+	background-color: rgba(255,255,255,0.6);
+	border: solid 1px silver;
+	border-radius: 25px;
+	position: absolute;
+	margin: 170px 70px 400px 50px;
 }
