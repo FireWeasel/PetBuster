@@ -9,12 +9,20 @@ img {
 	display: block;
 	position: relative;
 	right: -30%;
+	border-radius: 25px;
 }
 
 .title {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.Post-image {
+	position: absolute;
+	margin: 100px 10px 10px 10px;
+	/*left: -60%;*/
+	border-radius:25px;
 }
 
 #container{
@@ -30,19 +38,23 @@ img {
 
 .post-box-1 {
 	width: 900px;
-	height: 150px;
+	height: 250px;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
 	position: absolute;
 	margin: 50px 50px 50px 50px;
 }
+p {
+	font-size: 36;
+	margin: 50px 170px 50px 230px;
+}
 .post-box-2 {
 	width: 900px;
-	height: 150px;
+	height: 250px;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
 	position: absolute;
-	margin: 300px 50px 300px 50px;
+	margin: 350px 50px 350px 50px;
 }
