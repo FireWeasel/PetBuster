@@ -24,16 +24,19 @@
  		</div>
 
  		<div id="container">
-			<form action="#">
-				<label>Post title:</label>
-				<input type="text" name="post-title"><br>
-				<label>Description:</label>
-				<textarea type="text" name="description"></textarea><br>
-				<label>Post type:</label>
-				<input type="radio" name="post-type" value="lost" checked>Lost
-				<input type="radio" name="post-type" value="found">Found<br>
-				<input type="submit" value="Submit" class="btn btn-primary">
-			</form> 
+ 			<div id="container-wrapper">
+ 				<h1>Create post</h1><hr>
+				<form action="#">
+					<label>Post title:</label>
+					<input type="text" name="post-title"><br>
+					<label>Description:</label>
+					<textarea style="resize:none" name="description"></textarea><br>
+					<label>Post type:</label>
+					<input type="radio" name="post-type" value="lost" checked>Lost
+					<input type="radio" name="post-type" value="found">Found<br>
+					<input type="submit" value="Submit" class="btn btn-primary">
+				</form>
+			</div>
  		</div>
 
  		<script src="../js/jquery-3.1.1.js"></script>
