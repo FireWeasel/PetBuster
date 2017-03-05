@@ -52,12 +52,20 @@
           </div>
         </div>
       </div>
+      <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+          <div class="loginmodal-container">
+            <h1>Pet Buster</h1><br>
+            <p>Pet Buster is a web application for creating posts for lost and found pets.</p>
+          </div>
+        </div>
+      </div>
   	<div class="container">
       <div class="widget center">
         <div class="text center">
           <h1>PetBuster</h1>
           <p>The place where you can find your lost pet.</p>
-          <button class="btn btn-transparent col-md-3" id="navbtn">About</button>
+          <button class="btn btn-transparent col-md-3" id="navbtn" data-toggle="modal" data-target="#about-modal">About</button>
           <button class="btn btn-transparent col-md-3" id="navbtn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
           <button class="btn btn-transparent col-md-3" id="navbtn" data-toggle="modal" data-target="#login-modal">Sign In</button>
         </div>
