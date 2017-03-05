@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Posts</title>
+		<link rel="stylesheet" type="text/css" href="../css/post-create.css">
+		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	</head>
+
+	<body>
+		<div id='cssmenu'>
+			<ul>
+			   <li class='active'><a href='../index.html'>Home</a></li>
+			   <li><a href='#'>Lost</a></li>
+			   <li><a href='#'>Found</a></li>
+			   <li><a href='#'>About</a></li>
+			   <li><a href='#'>Contact</a></li>
+			</ul>
+		</div>
+
+		<div class="title">
+			<img src="../images/Black-Logo.png" >
+ 		</div>
+
+ 		<div id="container">
+			<form action="#">
+				<label>Post title:</label>
+				<input type="text" name="post-title"><br>
+				<label>Description:</label>
+				<textarea type="text" name="description"></textarea><br>
+				<label>Post type:</label>
+				<input type="radio" name="post-type" value="lost" checked>Lost
+				<input type="radio" name="post-type" value="found">Found<br>
+				<input type="submit" value="Submit" class="btn btn-primary">
+			</form> 
+ 		</div>
+
+ 		<script src="../js/jquery-3.1.1.js"></script>
+ 		<script src="../js/navigation.js"></script>
+ 	</body>
+
+</html>
