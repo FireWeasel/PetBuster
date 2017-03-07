@@ -6,15 +6,16 @@ body {
 }
 
 img {
-	display: block;
-	position: relative;
-	right: -60%;
+	
 }
 
 .title {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
+	position: relative;
+	right: -60%;
 }
 
 #container{
@@ -48,7 +49,7 @@ img {
 	margin: 250px 50px 300px 50px;
 }
 
-input {
+input[name="submitted"] {
 	width: 500px;
 	height: 50px;
 	background-color: rgba(255,255,255,0.6);
@@ -56,4 +57,28 @@ input {
 	border-radius: 25px;
 	position: absolute;
 	margin: 170px 70px 400px 50px;
+}
+button {
+	border-radius: 25px;
+	width: 100px;
+	height: 50px;
+	background-color: rgba(255,255,255,0.6);
+	border: solid 1px silver;
+	position: absolute;
+	margin: 153px 70px 600px 600px;
+}
+
+.image-post img {
+	position: relative;
+	border-radius: 25px;
+	border: solid silver 1px;
+	right: -5%;
+}
+
+#search-box  {
+	position :absolute;	
+	right: 1%;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 25px;
+	border: solid 0px;
 }

@@ -5,22 +5,20 @@ body {
 	background-position: center;
 }
 
-img {
-	display: block;
-	position: relative;
-}
 
-.title {
-	position: relative;
+.title img {
+	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
+	right: -30%;
 }
 
-.Post-image {
-	position: absolute;
-	margin: 100px 10px 10px 10px;
+.Post-image-1 img {
+	position: relative;
+	margin: -40px 10px 0px 10px;
 	/*left: -60%;*/
 	border-radius:25px;
+	border: solid 0px;
 }
 
 #container{
@@ -43,9 +41,15 @@ img {
 	position: absolute;
 	margin: 50px 50px 50px 50px;
 }
+
+.post-title {
+	margin:10px 10px 0px 10px;
+	position: relative;
+}
+
 p {
 	font-size: 36;
-	margin: 50px 170px 50px 230px;
+	margin: 50px 170px 10px 200px;
 }
 .post-box-2 {
 	width: 900px;
@@ -55,4 +59,12 @@ p {
 	border-radius: 25px;
 	position: absolute;
 	margin: 350px 50px 350px 50px;
+}
+
+#search-box  {
+	position :absolute;	
+	right: 1%;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 25px;
+	border: solid 0px;
 }
