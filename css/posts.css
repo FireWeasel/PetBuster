@@ -1,70 +1,76 @@
 body {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/posts-page-background.jpg"); 
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/posts-page-background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 }
 
-
-.title img {
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	right: -30%;
+.title {
+	width: 100%;
 }
 
-.Post-image-1 img {
+.title img {
 	position: relative;
-	margin: -40px 10px 0px 10px;
-	/*left: -60%;*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post-box img {
+	display: block;
+	margin: 0 auto;
 	border-radius:25px;
 	border: solid 0px;
 }
 
 #container{
-    width: 1000px;
-    height: 700px;
+    width: 80%;
     background-color: rgba(255,255,255,0.5);
     border: solid 1px silver;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
-	border-radius: 25px;
-	position: relative;
+		border-radius: 25px;
+		position: relative;
 }
 
-.post-box-1 {
-	width: 900px;
-	height: 250px;
+.post-box {
+	width: 90%;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
-	position: absolute;
-	margin: 50px 50px 50px 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	padding-bottom: 3%;
+	position: relative;
 }
 
 .post-title {
-	margin:10px 10px 0px 10px;
-	position: relative;
+	margin-left: 2%;
 }
 
 p {
 	font-size: 36;
 	margin: 50px 170px 10px 200px;
 }
-.post-box-2 {
-	width: 900px;
-	height: 250px;
-	background-color: rgba(255,255,255,0.7);
-	border: solid 1px silver;
-	border-radius: 25px;
-	position: absolute;
-	margin: 350px 50px 350px 50px;
-}
 
 #search-box  {
-	position :absolute;	
-	right: 1%;
+	position: relative;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 25px;
 	border: solid 0px;
+	height: 25px;
+	width: 150px;
+	margin-top: 2%;
+	margin-right: 2%;
+	float: right;
+}
+
+#search-btn {
+	position: relative;
+	float: right;
+	margin-top: 2%;
+	margin-right: 1%;
+	border-radius: 20px;
 }
