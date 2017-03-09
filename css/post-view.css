@@ -1,84 +1,28 @@
-body {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/posts-page-background.jpg"); 
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
+.comment-form {
+	width: 100%;
 }
 
-img {
-	
+.comment-form textarea {
+	width: 95%;
+	resize: none;
+	margin-left: 5%;
+	border-radius: 5px;
+	height: 80px;
 }
 
-.title {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	position: relative;
-	right: -60%;
+.comment-form button {
+	position: absolute;
+	bottom: 0;
 }
 
-#container{
-    width: 1000px;
-    height: 700px;
-    background-color: rgba(255,255,255,0.5);
-    border: solid 1px silver;
-    margin-left: auto; 
-    margin-right: auto;
-	border-radius: 25px;
-	position: relative;
-}
-
-.post-box-1 {
-	width: 900px;
-	height: 600px;
+.comment-box {
+	width: 90%;
 	background-color: rgba(255,255,255,0.7);
 	border: solid 1px silver;
 	border-radius: 25px;
-	position: absolute;
-	margin: 50px 50px 50px 50px;
-}
-
-.post-box-2 {
-	width: 790px;
-	height: 100px;
-	background-color: rgba(255,255,255,0.5);
-	border: solid 1px silver;
-	border-radius: 25px;
-	position: absolute;
-	margin: 250px 50px 300px 50px;
-}
-
-input[name="submitted"] {
-	width: 500px;
-	height: 50px;
-	background-color: rgba(255,255,255,0.6);
-	border: solid 1px silver;
-	border-radius: 25px;
-	position: absolute;
-	margin: 170px 70px 400px 50px;
-}
-button {
-	border-radius: 25px;
-	width: 100px;
-	height: 50px;
-	background-color: rgba(255,255,255,0.6);
-	border: solid 1px silver;
-	position: absolute;
-	margin: 153px 70px 600px 600px;
-}
-
-.image-post img {
+	margin-left: auto;
+	margin-right: auto;
 	position: relative;
-	border-radius: 25px;
-	border: solid silver 1px;
-	right: -5%;
-}
-
-#search-box  {
-	position :absolute;	
-	right: 1%;
-	background-color: rgba(255,255,255,0.5);
-	border-radius: 25px;
-	border: solid 0px;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }

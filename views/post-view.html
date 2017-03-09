@@ -3,19 +3,20 @@
 
 	<head>
 		<title>Post name</title>
+		<link rel="stylesheet" type="text/css" href="../css/posts.css">
 		<link rel="stylesheet" type="text/css" href="../css/post-view.css">
 		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	</head>
 
 	<body>
 		<div id='cssmenu'>
 			<ul>
 			   <li class='active'><a href='../index.html'>Home</a></li>
-			   <li><a href='#'>Lost</a></li>
-			   <li><a href='#'>Found</a></li>
+			   <li><a href='posts.html'>Lost</a></li>
+			   <li><a href='posts.html'>Found</a></li>
 			   <li><a href='#'>About</a></li>
 			   <li><a href='#'>Contact</a></li>
-			   <li style="float: right;"><input id="search-box"type="text" name="search-box"></li> 
 			</ul>
 		</div>
 
@@ -23,19 +24,44 @@
 			<img src="../images/White-Logo.png" >
  		</div>
 
- 		<div id="container" class="all-boxes">
- 			<div class="post-box-1">
-	 			<h1>Post title</h1>
-	 			<hr>
-	 			<div class="image-post">
-	 				<img src="../images/Post-image.jpg">
+ 		<div id="container">
+			<div class="post-box">
+				<h1 class="post-title">Post name</h1>
+				<hr>
+				<div class="row">
+					<div class="col col-lg-3">
+						<img src="../images/Post-image.jpg">
+					</div>
+					<div class="col col-lg-8">
+						<p>Sample description</p>
+					</div>
+				</div>
+				<hr>
+	 			<div class="comment-form">
+					<div class="row">
+						<div class="col col-lg-8">
+							<textarea></textarea>
+						</div>
+						<div class="col col-lg-4" style="height: 80px;">
+		 					<button class="btn btn-primary">Submit</button>
+						</div>
+					</div>
 	 			</div>
-	 			<hr>
-	 			<div class="input-form">
-	 				<form><input type="text" name="submitted" id="textbox"><br>
-	 				<button class="button-submit">Submit</button>
-	 			</div>
- 			</div> 
+				<hr>
+				<div class="comments">
+					<div class="comment-box">
+						<div class="row">
+							<div class="col col-lg-3">
+								<img src="../images/Post-image.jpg">
+							</div>
+							<div class="col col-lg-8">
+								<p><b>Author, date</b></p>
+								<p>Sample comment</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
  		</div>
 
  		<script src="../js/jquery-3.1.1.js"></script>
