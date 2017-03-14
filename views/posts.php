@@ -34,6 +34,13 @@
  		</div>
 
  		<div id="container">
+ 			<?php
+ 				include "../engine/db_connect.php";
+
+				// Establishing connection with the database
+ 				$db_conn = new DBConnection();
+				// $posts = $db_conn -> getAllPosts();
+ 			?>
  			<div class="post-box">
  				<a href="post-view.html"><h1 class="post-title">Post name</h1></a>
 	 			<hr>

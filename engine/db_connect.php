@@ -1,4 +1,6 @@
 <?php
+	include "../entities/post.php";
+
 	class DBConnection {
 
 		public $servername;
@@ -24,7 +26,13 @@
 
 		function getAllPosts() {
 			$sql = "SELECT * FROM POSTS;";
-			return $this->conn->query($sql);
+			$result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+			    while($row = $result->fetch_assoc()) {
+							$posts[] = new Post($row["title"], $row["description"], $row["author"]);
+			    }
+			}
+			return $posts;
 		}
 
 		function getPost($id) {
