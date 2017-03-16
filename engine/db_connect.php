@@ -10,10 +10,10 @@
 		public $conn;
 
 		function __construct() {
-			$this->servername = "localhost";
-			$this->username = "admin";
-			$this->password = "admin";
-			$this->dbname = "testDB";
+			$this->servername = "studmysql01.fhict.local";
+			$this->username = "dbi356722";
+			$this->password = "dbi356722";
+			$this->dbname = "dbi356722";
 			$this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 			if ($this->conn->connect_error) {
 			    die("Connection failed: " . $this->conn->connect_error);
@@ -25,7 +25,7 @@
 		}
 
 		function getAllPosts() {
-			$sql = "SELECT * FROM POSTS;";
+			$sql = "SELECT * FROM POST;";
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
@@ -36,7 +36,7 @@
 		}
 
 		function getPost($id) {
-			$sql = "SELECT * FROM POSTS WHERE id= " . $id . ";";
+			$sql = "SELECT * FROM POST WHERE id= " . $id . ";";
 			return $this->conn->query($sql);
 		}
 
