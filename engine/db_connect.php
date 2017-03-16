@@ -40,6 +40,11 @@
 			return $this->conn->query($sql);
 		}
 
+		function userSignUp($username, $email, $password) {
+			$sql = "INSERT INTO USER(USERNAME, EMAIL, PASSWORD) VALUES (\"$username\",\"$email\",\"$password\");";
+			return $this->conn->query($sql);
+		}
+
 		function __destruct() {
 			$conn->close();
 		}
