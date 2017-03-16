@@ -45,6 +45,11 @@
 			return $this->conn->query($sql);
 		}
 
+		function getUser($id) {
+			$sql = "SELECT * FROM USER WHERE id= " . $id . ";";
+			return $this->conn->query($sql);
+		}
+
 		function __destruct() {
 			$conn->close();
 		}
