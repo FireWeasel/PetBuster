@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="col col-lg-4">
-				<input id="search-box" type="text" name="search-box">
+				<input id="autocomplete" type="text" name="search-box">
 				<button id="search-btn"><span class="glyphicon glyphicon-search"></span></button>
 			</div>
 		</div>
@@ -38,11 +38,13 @@
  				include "../engine/db_connect.php";
 
 				// Establishing connection with the database
- 				$db_conn = new DBConnection();
-				// $posts = $db_conn -> getAllPosts();
+ 				//$db_conn = new DBConnection();
+				//$posts = $db_conn -> getAllPosts();
+				//$postsArr = array($posts);
+				
  			?>
  			<div class="post-box">
- 				<a href="post-view.html"><h1 class="post-title">Post name</h1></a>
+				<a href="post-view.html"><h1 class="post-title">Post name</h1></a>	
 	 			<hr>
 	 			<div class="row">
 	 				<div class="col col-lg-3">
@@ -66,9 +68,39 @@
 	 			</div>
 	 		</div>
  		</div>
-
+ 		<script src="external/jquery/jquery.js"></script>
+ 		<script src="../js/jquery-ui.js"></script>
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
+ 		<script>
+ 			var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+ 		</script>
  	</body>
 
 </html>
