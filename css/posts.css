@@ -55,7 +55,7 @@ p {
 	margin: 50px 170px 10px 200px;
 }
 
-#autocomplete {
+#search-box {
 	position: relative;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 25px;

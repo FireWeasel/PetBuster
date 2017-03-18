@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<title>Posts</title>
+		<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../css/posts.css">
 		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -24,8 +25,10 @@
 				</div>
 			</div>
 			<div class="col col-lg-4">
-				<input id="autocomplete" type="text" name="search-box">
-				<button id="search-btn"><span class="glyphicon glyphicon-search"></span></button>
+				<div class="ui-widget">
+  				<input id="search-box">
+				</div>
+				<button id="search-btn" onclick="searchWeb()"><span class="glyphicon glyphicon-search"></span></button>
 			</div>
 		</div>
 
@@ -68,39 +71,28 @@
 	 			</div>
 	 		</div>
  		</div>
- 		<script src="external/jquery/jquery.js"></script>
- 		<script src="../js/jquery-ui.js"></script>
+ 		
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
- 		<script>
- 			var availableTags = [
-	"ActionScript",
-	"AppleScript",
-	"Asp",
-	"BASIC",
-	"C",
-	"C++",
-	"Clojure",
-	"COBOL",
-	"ColdFusion",
-	"Erlang",
-	"Fortran",
-	"Groovy",
-	"Haskell",
-	"Java",
-	"JavaScript",
-	"Lisp",
-	"Perl",
-	"PHP",
-	"Python",
-	"Ruby",
-	"Scala",
-	"Scheme"
-];
-$( "#autocomplete" ).autocomplete({
-	source: availableTags
-});
- 		</script>
- 	</body>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../js/posts.js"></script>
+  <script>
+  $( function() {
+    var availableTags = [
+      "Found Husky",
+      "Pig",
+      "Dog",
+      "Cat",
+      "Chicken",
+      "Horse",
+      "Lost Bird"
+    ];
+    $( "#search-box" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+   	</body>
 
 </html>
