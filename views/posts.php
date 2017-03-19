@@ -97,7 +97,7 @@
 		function loadByAjax()
 			{
     		 $.ajax({
-          		type: "POST",
+          		type: "GET",
           		url: "posts.php",
           		data: "searchkey=data_from_user_input",
           		success: function(response_data){
