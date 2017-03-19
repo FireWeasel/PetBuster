@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="../css/post-create.css">
 		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<!--<script type = "text/javascript" language="JavaScript" src="../js/validationpost.js"></script>-->
+		<script type="text/javascript" language="JavaScript" src="../js/jquery-3.1.1.js"></script>
 	</head>
 
 	<body>
@@ -28,19 +30,23 @@
  		<div id="container">
  			<div id="container-wrapper">
  				<h1>Create post</h1><hr>
-				<form action="#">
+				<form action="#" id = "form1">
+
 					<label>Post title:</label>
-					<input type="text" name="post-title"><br>
+					<input type="text" name="post-title" id = "postname" class="postname"><span id = "Errorpostname" class="errorpostname"></span><br>
+
+
 					<label>Description:</label>
-					<textarea style="resize:none" name="description"></textarea><br>
+					<textarea style="resize:none" name="description" id = "description" class="description"></textarea><span id="errordescription" class="errordescription"></span><br>
 					<label>Post type:</label>
 					<input type="radio" name="post-type" value="lost" checked>Lost
 					<input type="radio" name="post-type" value="found">Found<br>
-					<input type="submit" value="Submit" class="btn btn-primary">
+					<input type="submit" value="Submit" class="btn btn-primary" id = "submitbutton">
 				</form>
 			</div>
  		</div>
 
+		<script src="../js/validationpost.js"></script>
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
  	</body>

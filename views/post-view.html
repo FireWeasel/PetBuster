@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/post-view.css">
 		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<script type="text/javascript" language="JavaScript" src="../js/jquery-3.1.1.js"></script>
 	</head>
 
 	<body>
@@ -38,13 +39,13 @@
 					</div>
 				</div>
 				<hr>
-	 			<div class="comment-form">
+	 			<div class="comment-form" id="commentform">
 					<div class="row">
 						<div class="col col-lg-8">
-							<textarea></textarea>
+							<textarea id = "comment"></textarea><span id="commenterror" class="commenterror"></span>
 						</div>
 						<div class="col col-lg-4" style="height: 80px;">
-		 					<button class="btn btn-primary">Submit</button>
+		 					<button class="btn btn-primary" id = "commentbtn">Submit</button>
 						</div>
 					</div>
 	 			</div>
@@ -64,7 +65,7 @@
 				</div>
 			</div>
  		</div>
-
+		<script src="../js/validationcomment.js"></script>
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
  	</body>

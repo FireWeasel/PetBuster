@@ -23,3 +23,22 @@ textarea {
 	width: 40%;
 	height: 150px;
 }
+.errorpostname{
+	position: fixed;
+	float: right;
+	margin-top: 2.37%;
+	color: red;
+
+
+}
+.errordescription{
+	position: fixed;
+	float: right;
+	margin-top: 4%;
+	color: red;
+
+}
+
+#datepicker{
+	float: left;
+}
