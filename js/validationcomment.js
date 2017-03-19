@@ -24,6 +24,7 @@ $(function () {
     $("#commentform").submit(function () {
         commenterror = false;
         check_comment();
+
         if(commenterror == true){
             return false;
 
