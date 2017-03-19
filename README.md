@@ -1,1 +1,1 @@
-[a link](http://i356722.iris.fhict.nl/)
+[Link to website](http://i356722.iris.fhict.nl/)
