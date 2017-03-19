@@ -23,8 +23,8 @@
             <h1>Login</h1><br>
             <img src="images/paw-transparent.png" id="login-image">
             <form>
-              <input type="text" name="user" placeholder="Username" id = "username"><span id = "errorusername" class="errorusername"></span>
-              <input type="password" name="pass" placeholder="Password" id = "password"><span id = "errorpassword" class="errorpasword"></span>
+              <input type="text" name="user" placeholder="Username" id = "username" required><span id = "errorusername" class="errorusername"></span>
+              <input type="password" name="pass" placeholder="Password" id = "password" required><span id = "errorpassword" class="errorpasword"></span>
               <input type="submit" name="login" class="login loginmodal-submit" value="Login">
             </form>
 
@@ -40,10 +40,10 @@
             <h1>Sign Up</h1><br>
             <img src="images/paw-transparent.png" id="login-image">
             <form id="registrationform">
-              <input type="text" name="signup_user" placeholder="Username" id = "usernamereg" class="usernamereg"><span id="erroruser"></span>
-              <input type="text" name="signup_email" placeholder="Email" id="mailreg" class="mailreg"><span id = "errormail"></span>
-              <input type="password" name="signup_pass" placeholder="Password" id="passwordreg" class="passwordreg"><span id="errorpass"></span>
-              <input type="password" name="signup_pass_confirm" placeholder="Confirm Password" id="passwordregrep" class="passwordregrep"><span id="errorpasswordrep"></span>
+              <input type="text" name="signup_user" placeholder="Username" id = "usernamereg" required class="usernamereg"><span id="erroruser"></span>
+              <input type="text" name="signup_email" placeholder="Email" id="mailreg" required class="mailreg"><span id = "errormail"></span>
+              <input type="password" name="signup_pass" placeholder="Password" id="passwordreg" required class="passwordreg"><span id="errorpass"></span>
+              <input type="password" name="signup_pass_confirm" placeholder="Confirm Password" required id="passwordregrep" class="passwordregrep"><span id="errorpasswordrep"></span>
               <input type="submit" name="login" class="login loginmodal-submit" value="Sign Up" id="submitbutton">
             </form>
 
