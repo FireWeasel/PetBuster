@@ -28,7 +28,7 @@
 				<div class="ui-widget">
   				<input id="search-box">
 				</div>
-				<button id="search-btn" onclick="searchWeb()"><span class="glyphicon glyphicon-search"></span></button>
+				<button id="search-btn" onclick="loadByAjax()"><span class="glyphicon glyphicon-search"></span></button>
 			</div>
 		</div>
 
@@ -76,7 +76,7 @@
  		<script src="../js/navigation.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="../js/posts.js"></script>
+  <!--<script src="../js/posts.js"></script>-->
   <script>
   $( function() {
     var availableTags = [
@@ -93,6 +93,18 @@
     });
   } );
   </script>
+  <script type="text/javascript">
+		function loadByAjax()
+			{
+    		 $.ajax({
+          		type: "POST",
+          		url: "posts.php",
+          		data: "searchkey=data_from_user_input",
+          		success: function(response_data){
+          		$('container').html(response_data)
+         		}
+          });
+}
+</script>
    	</body>
-
 </html>
