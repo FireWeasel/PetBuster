@@ -10,26 +10,28 @@ $(function () {
     $("#comment").focusout(function () {
         check_comment();
     });
-    $("#commentform").submit(function () {
-        check_comment();
-        if(commenterror === true){
-            return false;
-        }
-        else{
-            return true;
-
-        }
-    });
     function check_comment() {
         var comment_lenght = $("#comment").val().length;
-        if(comment_lenght === 0){
+        if(comment_lenght == 0){
             $('#commenterror').html("Input a comment");
             $('#commenterror').show();
-            $commenterror = true;
+           $commenterror = true;
         }
         else{
             $('#commenterror').hide();
         }
     }
+    $("#commentform").submit(function () {
+        commenterror = false;
+        check_comment();
+
+        if(commenterror == true){
+            return false;
+
+        }
+        else{
+            return true;
+        }
+    });
     });
 

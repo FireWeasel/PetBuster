@@ -15,15 +15,6 @@ $(function () {
     $("#description").focusout(function () {
         check_description();
     });
-    $("#form1").submit(function () {
-        check_submit();
-        if(error_postname === true || error_description === true){
-            return false;
-        }
-        else{
-            return true;
-        }
-    })
 
 function check_postname() {
 
@@ -49,18 +40,18 @@ function check_description() {
         $("#errordescription").hide();
     }
 }
-function submit() {
+$("#form1").submit(function() {
     error_description = false;
     error_postname = false;
     check_postname();
     check_description();
-    if(error_description === true || error_postname === true){
-        $("#errordescription").html("You should include describtion to the form");
-        $("#errordescription").show();
-        $("#Errorpostname").html("You should include name of the post");
-        $("#Errorpostname").show();
+    if(error_description == true || error_postname == true){
+        return false;
+    }
+    else{
+        return true;
     }
 
-}
+});
 
 });

@@ -68,6 +68,7 @@
 	 		 
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
+<<<<<<< HEAD
   		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   		<!--<script src="../js/posts.js"></script>-->
@@ -100,5 +101,39 @@
           							});
 						}
 		</script>
+=======
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--<script src="../js/posts.js"></script>-->
+  <script>
+  $( function() {
+    var availableTags = [
+      "Found Husky",
+      "Pig",
+      "Dog",
+      "Cat",
+      "Chicken",
+      "Horse",
+      "Lost Bird"
+    ];
+    $( "#search-box" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+  <script type="text/javascript">
+		function loadByAjax()
+			{
+    		 $.ajax({
+          		type: "GET",
+          		url: "posts.php",
+          		data: "searchkey=data_from_user_input",
+          		success: function(response_data){
+          		$('container').html(response_data)
+         		}
+          });
+}
+</script>
+>>>>>>> 259bb4cba2f420da105c14093bf1cb228e174003
    	</body>
 </html>
