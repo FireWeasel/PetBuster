@@ -29,7 +29,7 @@
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-							$posts[] = new Post($row["title"], $row["description"], $row["author"]);
+							$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"]);
 			    }
 			}
 			return $posts;
@@ -51,7 +51,7 @@
 		}
 
 		function __destruct() {
-			$conn->close();
+			$this -> conn->close();
 		}
 	}
 ?>
