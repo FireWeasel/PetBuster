@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
 	</head>
 
-	<body>
+	<body >
 		<div class="row">
 			<div class="col col-lg-8">
 				<div id='cssmenu'>
@@ -52,6 +52,18 @@
 
  				$db_conn = new DBConnection();
 				$posts = $db_conn -> getAllPosts();
+				function LimitCharacter($description,$limit = 20)
+				{
+    			if (strlen($description) > $limit)
+    			{
+        			$description = substr($description, 0, strrpos(substr($description, 0, $limit), ' ')) . '...';
+        			return $description;
+    			}
+    			else
+    			{
+       				 return $description;
+    			}
+				}
  			?>
  			 <?php foreach ($posts as $value):  ?>
  			 <div class="post-box" >
@@ -59,8 +71,11 @@
  			 <?php
  			 	include_once "../entities/post.php";
  			 	$id = $value -> getID();
+ 			 	$title = $value -> getTitle();
+ 			 	$description = $value -> getDescription();
+ 			 		
  			 ?>
- 		     <a href="post-view.php?id=<?php echo $id?>"><h1 class="post-title" id="$id"><?php echo $value -> getTitle();?></h1></a>
+ 		     <a href="post-view.php?id=<?php echo $id?>"><h1 class="post-title" id="$id"><?php echo $title ?></h1></a>
  		     </div>
  			 <hr>
  		     <div class="row">
@@ -68,7 +83,7 @@
  			 <img src="../images/Post-image.jpg">
  			 </div>
  			 <div class="col col-lg-8">
- 			 <p><?php echo $value -> getDescription();?></p>
+ 			 <p id="p_description"><?php echo LimitCharacter($description,50) ?></p>
  			 </div>
 	 		</div>
 	 		</div>
