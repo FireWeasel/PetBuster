@@ -37,43 +37,71 @@
  		</div>
 
  		<div id="container">
+ 		
  			<?php
  				include "../engine/db_connect.php";
+ 				
 
 				// Establishing connection with the database
- 				//$db_conn = new DBConnection();
-				//$posts = $db_conn -> getAllPosts();
-				//$postsArr = array($posts);
-				
+ 				$db_conn = new DBConnection();
+				$posts = $db_conn -> getAllPosts();
  			?>
- 			<div class="post-box">
-				<a href="post-view.html"><h1 class="post-title">Post name</h1></a>	
-	 			<hr>
-	 			<div class="row">
-	 				<div class="col col-lg-3">
-			 			<img src="../images/Post-image.jpg">
-	 				</div>
-					<div class="col col-lg-8">
-						<p>Demo text for a post</p>
-					</div>
-	 			</div>
+ 			 <?php foreach ($posts as $value):  ?>
+ 			 <div class="post-box">
+ 			 <div class="post-title">
+ 			 <?php 
+ 			 include_once "../entities/post.php";
+ 			 ?>
+ 		     <a href="post-view.html"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
+ 		     </div>
+ 			 <hr>
+ 		     <div class="row">
+ 			 <div class="col col-lg-3">
+ 			 <img src="../images/Post-image.jpg">
+ 			 </div>
+ 			 <div class="col col-lg-8">
+ 			 <p><?php echo $value -> getDescription();?></p>
+ 			 </div>
+	 		</div> 
 	 		</div>
-	 		<div class="post-box">
-	 			<a href="post-view.html"><h1 class="post-title">Post name</h1></a>
-	 			<hr>
-				<div class="row">
-	 				<div class="col col-lg-3">
-		 				<img src="../images/Post-image.jpg">
-	 				</div>
-					<div class="col col-lg-8">
-						<p>Demo text for a post</p>
-					</div>
-	 			</div>
-	 		</div>
- 		</div>
- 		
+	 		<?php endforeach; ?>
+	 		 
  		<script src="../js/jquery-3.1.1.js"></script>
  		<script src="../js/navigation.js"></script>
+<<<<<<< HEAD
+  		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<!--<script src="../js/posts.js"></script>-->
+  		<script>
+ 		$( function() {
+    		var availableTags = [
+    	  		"Found Husky",
+      			"Pig",
+			    "Dog",
+			    "Cat",
+      			"Chicken",
+      			"Horse",
+      			"Lost Bird"
+    							];
+   		 $( "#search-box" ).autocomplete({
+	   			source: availableTags
+	 								    });
+  						});
+  		</script>
+  		<script type="text/javascript">
+			function loadByAjax()
+						{
+    		 				$.ajax({
+          					type: "GET",
+          					url: "posts.php",
+          					data: "searchkey=data_from_user_input",
+          					success: function(response_data){
+          					$('container').html(response_data)
+         													}
+          							});
+						}
+		</script>
+=======
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--<script src="../js/posts.js"></script>-->
@@ -106,5 +134,6 @@
           });
 }
 </script>
+>>>>>>> 259bb4cba2f420da105c14093bf1cb228e174003
    	</body>
 </html>
