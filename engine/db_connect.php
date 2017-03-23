@@ -50,6 +50,11 @@
 			return $this->conn->query($sql);
 		}
 
+		function getUserHashedPassword($username) {
+			$sql = 'SELECT password FROM USER WHERE username = \''.$username.'\';';
+			return $this->conn->query($sql)->fetch_assoc()["password"];
+		}
+
 		function __destruct() {
 			$this -> conn->close();
 		}

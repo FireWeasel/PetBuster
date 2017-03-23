@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	session_regenerate_id();
+	if(!isset($_SESSION['username'])) {
+		header("Location:../views/access_denied.html");
+	}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +18,7 @@
 	<body>
 		<div id='cssmenu'>
 			<ul>
-			   <li class='active'><a href='../index.html'>Home</a></li>
+			   <li class='active'><a href='../index.php'>Home</a></li>
 			   <li><a href='posts.php'>Lost</a></li>
 			   <li><a href='posts.php'>Found</a></li>
 			   <li><a href='#'>About</a></li>

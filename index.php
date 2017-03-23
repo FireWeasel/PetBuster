@@ -21,7 +21,7 @@
           <div class="loginmodal-container">
             <h1>Login</h1><br>
             <img src="images/paw-transparent.png" id="login-image">
-            <form>
+            <form action="engine/sign_in.php" method="post">
               <input type="text" name="user" placeholder="Username">
               <input type="password" name="pass" placeholder="Password">
               <input type="submit" name="login" class="login loginmodal-submit" value="Login">

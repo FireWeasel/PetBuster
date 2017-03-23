@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	session_regenerate_id();
+	if(!isset($_SESSION['username'])) {
+		header("Location:../views/access_denied.html");
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,11 +22,11 @@
 			<div class="col col-lg-8">
 				<div id='cssmenu'>
 					<ul>
-					   <li class='active'><a href='../index.html'>Home</a></li>
+					   <li class='active'><a href='../index.php'>Home</a></li>
 					   <li><a href='#'>Lost</a></li>
 					   <li><a href='#'>Found</a></li>
-						 <li><a href='post-create.html'>Create</a></li>
-						 <li><a href='user-profile.html'>Profile</a></li>
+						 <li><a href='post-create.php'>Create</a></li>
+						 <li><a href='user-profile.php'><?php echo $_SESSION['username'];?></a></li>
 					   <li><a href='#'>About</a></li>
 					   <li><a href='#'>Contact</a></li>
 					</ul>
@@ -42,8 +49,6 @@
  			<?php
  				include "../engine/db_connect.php";
 
-
-				// Establishing connection with the database
  				$db_conn = new DBConnection();
 				$posts = $db_conn -> getAllPosts();
  			?>
@@ -51,7 +56,7 @@
  			 <div class="post-box">
  			 <div class="post-title">
  			 <?php
- 			 include_once "../entities/post.php";
+ 			 	include_once "../entities/post.php";
  			 ?>
  		     <a href="post-view.html"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
  		     </div>
