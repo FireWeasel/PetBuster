@@ -35,15 +35,31 @@
  		</div>
 
  		<div id="container">
+ 		<?php 
+ 		include "../engine/db_connect.php";
+ 				$db_conn = new DBConnection();
+				$posts = $db_conn -> getAllPosts();
+				?>
 			<div class="post-box">
-				<h1 class="post-title">Post name</h1>
+			<?php
+			include_once "../entities/post.php";
+			$id = $_GET["id"];
+			$item = NULL;
+			foreach($posts as $post) {
+    			if ($id == $post-> getID()) {
+        			$item = $post;
+        			break;
+   				 }
+					}
+				?>
+				<h1 class="post-title"><?php echo $item -> getTitle(); ?></h1>
 				<hr>
 				<div class="row">
 					<div class="col col-lg-3">
 						<img src="../images/Post-image.jpg">
 					</div>
 					<div class="col col-lg-8">
-						<p>Sample description</p>
+						<p><?php echo $item -> getDescription(); ?></p>
 					</div>
 				</div>
 				<hr>

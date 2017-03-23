@@ -12,6 +12,10 @@
       $this -> author = $author;
     }
 
+    function getID() {
+      return $this -> id;
+    }
+    
     function getTitle() {
       return $this -> title;
     }

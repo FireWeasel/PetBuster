@@ -53,6 +53,7 @@ body {
 p {
 	font-size: 36;
 	margin: 50px 170px 10px 200px;
+	overflow: hidden;
 }
 
 #search-box {

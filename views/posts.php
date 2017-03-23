@@ -54,12 +54,13 @@
 				$posts = $db_conn -> getAllPosts();
  			?>
  			 <?php foreach ($posts as $value):  ?>
- 			 <div class="post-box">
+ 			 <div class="post-box" >
  			 <div class="post-title">
  			 <?php
  			 	include_once "../entities/post.php";
+ 			 	$id = $value -> getID();
  			 ?>
- 		     <a href="post-view.php"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
+ 		     <a href="post-view.php?id=<?php echo $id?>"><h1 class="post-title" id="$id"><?php echo $value -> getTitle();?></h1></a>
  		     </div>
  			 <hr>
  		     <div class="row">
