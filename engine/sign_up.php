@@ -13,9 +13,9 @@
     $cryptSalt = '$'.$algo.'$rounds='.$rounds.'$'.$salt;
     $hashedPassword = crypt($password, $cryptSalt);
   }
-  
+
   $db_conn = new DBConnection();
   $db_conn->userSignUp($username, $email, $hashedPassword);
 
-  header("Location:../views/posts.php");
+  header("Location:../index.php");
 ?>
