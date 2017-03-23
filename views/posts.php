@@ -29,6 +29,7 @@
 						 <li><a href='user-profile.php'><?php echo $_SESSION['username'];?></a></li>
 					   <li><a href='#'>About</a></li>
 					   <li><a href='#'>Contact</a></li>
+						 <li><a href='../engine/sign_out.php'>Sign out</a></li>
 					</ul>
 				</div>
 			</div>
@@ -58,7 +59,7 @@
  			 <?php
  			 	include_once "../entities/post.php";
  			 ?>
- 		     <a href="post-view.html"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
+ 		     <a href="post-view.php"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
  		     </div>
  			 <hr>
  		     <div class="row">

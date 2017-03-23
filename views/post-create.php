@@ -26,6 +26,7 @@
 				 <li><a href='user-profile.php'>Profile</a></li>
 			   <li><a href='#'>About</a></li>
 			   <li><a href='#'>Contact</a></li>
+				 <li><a href='../engine/sign_out.php'>Sign out</a></li>
 			</ul>
 		</div>
 
