@@ -3,10 +3,11 @@
 	<head>
 		<title>Posts</title>
 		<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../css/posts.css">
 		<link rel="stylesheet" type="text/css" href="../css/navigation.css">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
 	</head>
 
 	<body>
@@ -37,10 +38,10 @@
  		</div>
 
  		<div id="container">
- 		
+
  			<?php
  				include "../engine/db_connect.php";
- 				
+
 
 				// Establishing connection with the database
  				$db_conn = new DBConnection();
@@ -49,7 +50,7 @@
  			 <?php foreach ($posts as $value):  ?>
  			 <div class="post-box">
  			 <div class="post-title">
- 			 <?php 
+ 			 <?php
  			 include_once "../entities/post.php";
  			 ?>
  		     <a href="post-view.html"><h1 class="post-title"><?php echo $value -> getTitle();?></h1></a>
@@ -62,78 +63,40 @@
  			 <div class="col col-lg-8">
  			 <p><?php echo $value -> getDescription();?></p>
  			 </div>
-	 		</div> 
+	 		</div>
 	 		</div>
 	 		<?php endforeach; ?>
-	 		 
- 		<script src="../js/jquery-3.1.1.js"></script>
- 		<script src="../js/navigation.js"></script>
-<<<<<<< HEAD
-  		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  		<!--<script src="../js/posts.js"></script>-->
-  		<script>
- 		$( function() {
-    		var availableTags = [
-    	  		"Found Husky",
-      			"Pig",
-			    "Dog",
-			    "Cat",
-      			"Chicken",
-      			"Horse",
-      			"Lost Bird"
-    							];
-   		 $( "#search-box" ).autocomplete({
-	   			source: availableTags
-	 								    });
-  						});
+
+	 		<script src="../js/jquery-3.1.1.js"></script>
+	 		<script src="../js/navigation.js"></script>
+			<script src="../js/jquery-ui.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					var availableTags = [
+							"Found Husky",
+							"Pig",
+							"Dog",
+							"Cat",
+							"Chicken",
+							"Horse",
+							"Lost Bird"
+					];
+					$("#search-box").autocomplete({
+							source: availableTags
+					});
+				});
   		</script>
   		<script type="text/javascript">
-			function loadByAjax()
-						{
-    		 				$.ajax({
-          					type: "GET",
-          					url: "posts.php",
-          					data: "searchkey=data_from_user_input",
-          					success: function(response_data){
-          					$('container').html(response_data)
-         													}
-          							});
-						}
-		</script>
-=======
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--<script src="../js/posts.js"></script>-->
-  <script>
-  $( function() {
-    var availableTags = [
-      "Found Husky",
-      "Pig",
-      "Dog",
-      "Cat",
-      "Chicken",
-      "Horse",
-      "Lost Bird"
-    ];
-    $( "#search-box" ).autocomplete({
-      source: availableTags
-    });
-  } );
-  </script>
-  <script type="text/javascript">
-		function loadByAjax()
-			{
-    		 $.ajax({
-          		type: "GET",
-          		url: "posts.php",
-          		data: "searchkey=data_from_user_input",
-          		success: function(response_data){
-          		$('container').html(response_data)
-         		}
-          });
-}
-</script>
->>>>>>> 259bb4cba2f420da105c14093bf1cb228e174003
+				function loadByAjax() {
+					$.ajax({
+							type: "GET",
+							url: "posts.php",
+							data: "searchkey=data_from_user_input",
+							success: function(response_data) {
+									$('container').html(response_data)
+							}
+					});
+				}
+			</script>
    	</body>
 </html>
