@@ -19,14 +19,25 @@
 
 	<body >
 		<div class="row">
+		<?php
+			include "../engine/db_connect.php";
+ 			$db_conn = new DBConnection();
+			?>
 			<div class="col col-lg-8">
 				<div id='cssmenu'>
+				<?php 
+				include_once "../entities/user.php";
+				$username = $_SESSION['username'];
+				$users = $db_conn -> getUsers();
+				foreach ($users as $value);
+				$userId = $value -> getId();
+				?>
 					<ul>
 					   <li class='active'><a href='../index.php'>Home</a></li>
 					   <li><a href='#'>Lost</a></li>
 					   <li><a href='#'>Found</a></li>
 						 <li><a href='post-create.php'>Create</a></li>
-						 <li><a href='user-profile.php'><?php echo $_SESSION['username'];?></a></li>
+						 <li><a href='user-profile.php?id=<?php echo $userId  ?>'><?php echo $username;?></a></li>
 					   <li><a href='#'>About</a></li>
 					   <li><a href='#'>Contact</a></li>
 						 <li><a href='../engine/sign_out.php'>Sign out</a></li>
@@ -48,9 +59,7 @@
  		<div id="container">
 
  			<?php
- 				include "../engine/db_connect.php";
-
- 				$db_conn = new DBConnection();
+ 			
 				$posts = $db_conn -> getAllPosts();
 				function LimitCharacter($description,$limit = 20)
 				{

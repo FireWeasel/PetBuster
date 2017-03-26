@@ -70,7 +70,7 @@
 							<textarea id = "comment"></textarea><span id="commenterror" class="commenterror"></span>
 						</div>
 						<div class="col col-lg-4" style="height: 80px;">
-		 					<button class="btn btn-primary" id = "commentbtn">Submit</button>
+		 					<button href="post-view.php?id=<?php echo $id?>" class="btn btn-primary" id = "commentbtn">Submit</button>
 						</div>
 					</div>
 	 			</div>

@@ -1,5 +1,6 @@
 <?php
 	include "../entities/post.php";
+	include_once "../entities/user.php";
 
 	class DBConnection {
 
@@ -40,11 +41,17 @@
 			return $this->conn->query($sql);
 		}
 
+		function addingPost($title, $description, $author)
+		{
+			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR) VALUES (\"$title\",\"$description\",\"$author\");";
+			return $this->conn->query($sql);
+		}
+
 		function userSignUp($username, $email, $password) {
 			$sql = "INSERT INTO USER(USERNAME, EMAIL, PASSWORD) VALUES (\"$username\",\"$email\",\"$password\");";
 			return $this->conn->query($sql);
 		}
-
+		
 		function getUser($id)
         {
             $sql = "SELECT * FROM USER WHERE id= " . $id . ";";
@@ -55,6 +62,16 @@
             $sql = 'SELECT * FROM USER WHERE username = \''.$username.'\';';
             return $this->conn->query($sql)->fetch_assoc();
         }
+		function getUsers() {
+			$sql = "SELECT * FROM USER;";
+			$result = $this->conn->query($sql);
+				if ($result->num_rows > 0) {
+			    while($row = $result->fetch_assoc()) {
+							$users[] = new User($row["id"],$row["username"], $row["email"], $row["password"]);
+			    }
+			}
+    			return $users;
+		}
 
 		function getUserHashedPassword($username) {
 			$sql = 'SELECT password FROM USER WHERE username = \''.$username.'\';';
