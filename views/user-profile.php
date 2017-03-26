@@ -19,8 +19,8 @@ if (!isset($_SESSION['username'])) {
 <div id='cssmenu'>
     <ul>
         <li class='active'><a href='../index.php'>Home</a></li>
-        <li><a href='posts.php'>Lost</a></li>
-        <li><a href='posts.php'>Found</a></li>
+        <li><a href='posts.php?id=Lost'>Lost</a></li>
+        <li><a href='posts.php?id=Found'>Found</a></li>
         <li><a href='#'>About</a></li>
         <li><a href='#'>Contact</a></li>
         <li><a href='../engine/sign_out.php'>Sign out</a></li>

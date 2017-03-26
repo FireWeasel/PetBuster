@@ -22,6 +22,7 @@
 		<?php
 			include "../engine/db_connect.php";
  			$db_conn = new DBConnection();
+ 			$url = $_SERVER['QUERY_STRING'];
 			?>
 			<div class="col col-lg-8">
 				<div id='cssmenu'>
@@ -34,10 +35,10 @@
 				?>
 					<ul>
 					   <li class='active'><a href='../index.php'>Home</a></li>
-					   <li><a href='#'>Lost</a></li>
-					   <li><a href='#'>Found</a></li>
+					   <li><a href='posts.php?id=Lost'>Lost</a></li>
+					   <li><a href='posts.php?id=Found'>Found</a></li>
 						 <li><a href='post-create.php'>Create</a></li>
-						 <li><a href='user-profile.php?id=<?php echo $userId  ?>'><?php echo $username;?></a></li>
+						 <li><a href='user-profile.php'><?php echo $username;?></a></li>
 					   <li><a href='#'>About</a></li>
 					   <li><a href='#'>Contact</a></li>
 						 <li><a href='../engine/sign_out.php'>Sign out</a></li>
@@ -59,8 +60,9 @@
  		<div id="container">
 
  			<?php
- 			
-				$posts = $db_conn -> getAllPosts();
+ 			$type = $_GET['id'];
+				$posts = $db_conn -> getAllPosts($type);
+				
 				function LimitCharacter($description,$limit = 20)
 				{
     			if (strlen($description) > $limit)

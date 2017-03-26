@@ -25,25 +25,29 @@
 			return $this->conn;
 		}
 
-		function getAllPosts() {
+		function getAllPosts($type) {
 			$sql = "SELECT * FROM POST;";
+			if($type === "Lost")
+			{
+				$sql = "SELECT * FROM POST WHERE type=" ."\"$type\"".";";
+			} elseif ($type === "Found") {
+				$sql = "SELECT * FROM POST WHERE type=" ."\"$type\" ". ";";
+			}
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
-			    while($row = $result->fetch_assoc()) {
-							$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"]);
-			    }
-			}
+			while($row = $result->fetch_assoc()) {
+			$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);} }
 			return $posts;
-		}
+			}
 
 		function getPost($id) {
 			$sql = "SELECT * FROM POST WHERE id= " . $id . ";";
 			return $this->conn->query($sql);
 		}
 
-		function addingPost($title, $description, $author)
+		function addingPost($title, $description, $author,$type,$date)
 		{
-			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR) VALUES (\"$title\",\"$description\",\"$author\");";
+			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\");";
 			return $this->conn->query($sql);
 		}
 

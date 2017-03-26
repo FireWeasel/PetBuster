@@ -19,7 +19,7 @@
       $_SESSION['valid'] = true;
       $_SESSION['timeout'] = time();
       $_SESSION['username'] = $username;
-      header("Location:../views/posts.php");
+      header("Location:../views/posts.php?id=main");
       die();
     } else {
       echo "invalid credentials";

@@ -4,6 +4,8 @@
     private $title;
     private $description;
     private $author;
+    private $type;
+    private $calendar;
 
     function __construct($id, $title, $description, $author) {
       $this -> id = $id;
@@ -26,6 +28,15 @@
 
     function getAuthor() {
       return $this -> author;
+    }
+
+    function getType() {
+      return $this -> type;
+    }
+
+    function getDate()
+    {
+      return $this -> calendar;
     }
   }
 ?>
