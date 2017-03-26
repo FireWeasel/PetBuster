@@ -73,19 +73,24 @@ include_once ("../entities/user.php");
                      return $description;
                 }
                 }
-                $description = $posts["description"];
+                
         ?>
         <h1>User posts</h1>
+        <?php foreach ($posts as $post); ?>
+        <?php 
+        $description = $post ->getDescription();
+        $title = $post-> getTitle();
+        ?>
         <div class="container-wrapper">
             <div class="row">
                 <div class="col col-lg-2">
                     <img src="../images/sample-profile-picture.png" style="width: 100px; height: 100px">
                 </div>
                 <div class="col col-lg-10">
-                    <p><?php echo $posts["title"]?></p>
+                    <p><?php echo $title ?></p>
                     <div class="container-wrapper" style="width: 100%;">
                         <p><?php echo LimitCharacter($description,50) ?></p>
-                        <a href="post-view.php?id=<?php echo $posts["id"]?>"" style="float: right;">Read more-></a>
+                        <a href="post-view.php?id=<?php echo $post->getId();?>"" style="float: right;">Read more-></a>
                         <p>..</p>
                     </div>
                 </div>

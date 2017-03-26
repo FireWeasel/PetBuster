@@ -48,7 +48,11 @@
 		function getUserPost($username)
 		{
 			$sql = "SELECT * FROM POST WHERE author=" ."\"$username\"".";";
-            return $this->conn->query($sql)->fetch_assoc();
+            $result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+			$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);} }
+			return $posts;
 			
 		}
 
