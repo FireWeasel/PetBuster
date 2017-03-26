@@ -7,7 +7,6 @@
 ?>
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<title>Posts</title>
 		<link rel="stylesheet" type="text/css" href="../css/user-profile.css">
