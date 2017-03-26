@@ -45,10 +45,16 @@
 			return $this->conn->query($sql);
 		}
 
-		function getUser($id) {
-			$sql = "SELECT * FROM USER WHERE id= " . $id . ";";
-			return $this->conn->query($sql);
-		}
+		function getUser($id)
+        {
+            $sql = "SELECT * FROM USER WHERE id= " . $id . ";";
+            return $this->conn->query($sql)->fetch_assoc();
+        }
+
+        function getUserByUsername($username){
+            $sql = 'SELECT * FROM USER WHERE username = \''.$username.'\';';
+            return $this->conn->query($sql)->fetch_assoc();
+        }
 
 		function getUserHashedPassword($username) {
 			$sql = 'SELECT password FROM USER WHERE username = \''.$username.'\';';
