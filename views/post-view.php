@@ -36,14 +36,15 @@
 
  		<div id="container">
  		<?php 
+ 		$id = $_GET["id"];
  		include "../engine/db_connect.php";
  				$db_conn = new DBConnection();
-				$posts = $db_conn -> getAllPosts();
+				$posts = $db_conn -> getAllPosts($id);
 				?>
 			<div class="post-box">
 			<?php
 			include_once "../entities/post.php";
-			$id = $_GET["id"];
+			
 			$item = NULL;
 			foreach($posts as $post) {
     			if ($id == $post-> getID()) {

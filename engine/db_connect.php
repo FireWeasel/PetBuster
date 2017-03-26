@@ -45,6 +45,13 @@
 			return $this->conn->query($sql);
 		}
 
+		function getUserPost($username)
+		{
+			$sql = "SELECT * FROM POST WHERE author=" ."\"$username\"".";";
+            return $this->conn->query($sql)->fetch_assoc();
+			
+		}
+
 		function addingPost($title, $description, $author,$type,$date)
 		{
 			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\");";

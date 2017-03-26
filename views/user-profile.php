@@ -44,6 +44,7 @@ if (!isset($_SESSION['username'])) {
                     <?php
 
 include('../engine/db_connect.php');
+include_once('../entities/post.php');
         $datab_con = new DBConnection();
 
         $userinfo = $datab_con -> getUserByUsername($_SESSION['username']);
@@ -58,6 +59,22 @@ include_once ("../entities/user.php");
             </div>
         </div>
         <hr>
+        <?php
+        $posts =  $datab_con ->getUserPost($_SESSION['username']);
+        function LimitCharacter($description,$limit = 20)
+                {
+                if (strlen($description) > $limit)
+                {
+                    $description = substr($description, 0, strrpos(substr($description, 0, $limit), ' ')) . '...';
+                    return $description;
+                }
+                else
+                {
+                     return $description;
+                }
+                }
+                $description = $posts["description"];
+        ?>
         <h1>User posts</h1>
         <div class="container-wrapper">
             <div class="row">
@@ -65,10 +82,10 @@ include_once ("../entities/user.php");
                     <img src="../images/sample-profile-picture.png" style="width: 100px; height: 100px">
                 </div>
                 <div class="col col-lg-10">
-                    <p>Post title</p>
+                    <p><?php echo $posts["title"]?></p>
                     <div class="container-wrapper" style="width: 100%;">
-                        <p>sample post description</p>
-                        <a href="post-view.html" style="float: right;">Read more-></a>
+                        <p><?php echo LimitCharacter($description,50) ?></p>
+                        <a href="post-view.php?id=<?php echo $posts["id"]?>"" style="float: right;">Read more-></a>
                         <p>..</p>
                     </div>
                 </div>
