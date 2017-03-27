@@ -111,14 +111,16 @@
 					});
 				});
   		</script>
-  		<script type="text/javascript">
+			<!-- TODO -->
+			<script type="text/javascript">
 				function loadByAjax() {
 					$.ajax({
 							type: "GET",
-							url: "posts.php",
-							data: "searchkey=data_from_user_input",
+							url: "../engine/search_posts.php",
+							data: "searchkey=" + $("#search-box").val(),
 							success: function(response_data) {
-									$('container').html(response_data)
+									$('.container').html('');
+									console.log(response_data);
 							}
 					});
 				}

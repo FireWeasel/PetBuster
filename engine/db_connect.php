@@ -42,6 +42,18 @@
 			return $posts;
 		}
 
+		function getPostsByTitle($title) {
+			$sql = "SELECT * FROM POST WHERE TITLE LIKE \"%$title%\";";
+			$result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+				}
+			}
+			var_dump($posts);
+			return $posts;
+		}
+
 		function getPostTitles() {
 			$sql = "SELECT title FROM POST;";
 			$result = $this->conn->query($sql);
