@@ -42,6 +42,17 @@
 			return $posts;
 		}
 
+		function getPostTitles() {
+			$sql = "SELECT title FROM POST;";
+			$result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$posts[] = $row["title"];
+				}
+			}
+			return $posts;
+		}
+
 		function getPost($id) {
 			$sql = "SELECT * FROM POST WHERE id= " . $id . ";";
 			return $this->conn->query($sql);

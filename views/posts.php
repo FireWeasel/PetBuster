@@ -26,7 +26,7 @@
 			?>
 			<div class="col col-lg-8">
 				<div id='cssmenu'>
-				<?php 
+				<?php
 				include_once "../entities/user.php";
 				$username = $_SESSION['username'];
 				$users = $db_conn -> getUsers();
@@ -62,7 +62,7 @@
  			<?php
  			$type = $_GET['id'];
 				$posts = $db_conn -> getAllPosts($type);
-				
+
 				function LimitCharacter($description,$limit = 20)
 				{
     			if (strlen($description) > $limit)
@@ -84,7 +84,7 @@
  			 	$id = $value -> getID();
  			 	$title = $value -> getTitle();
  			 	$description = $value -> getDescription();
- 			 		
+
  			 ?>
  		     <a href="post-view.php?id=<?php echo $id?>"><h1 class="post-title" id="$id"><?php echo $title ?></h1></a>
  		     </div>
@@ -105,15 +105,7 @@
 			<script src="../js/jquery-ui.js"></script>
 			<script type="text/javascript">
 				$(function() {
-					var availableTags = [
-							"Found Husky",
-							"Pig",
-							"Dog",
-							"Cat",
-							"Chicken",
-							"Horse",
-							"Lost Bird"
-					];
+					var availableTags = <?php echo json_encode($db_conn->getPostTitles());?>;
 					$("#search-box").autocomplete({
 							source: availableTags
 					});
