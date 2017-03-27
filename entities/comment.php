@@ -4,12 +4,14 @@
     private $body;
     private $time;
     private $author;
+    private $post_id;
 
-    function __construct($id, $body, $time, $author) {
+    function __construct($id, $body, $time, $author, $post_id) {
       $this -> id = $id;
       $this -> body = $body;
       $this -> time = $time;
       $this -> author = $author;
+      $this -> post_id = $post_id;
     }
 
     function getID() {
@@ -26,6 +28,10 @@
 
     function getAuthor() {
       return $this -> author;
+    }
+
+    function getPostId() {
+      return $this -> post_id;
     }
   }
 ?>
