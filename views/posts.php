@@ -46,10 +46,12 @@
 				</div>
 			</div>
 			<div class="col col-lg-4">
-				<div class="ui-widget">
-  				<input id="search-box">
-				</div>
-				<button id="search-btn" onclick="loadByAjax()"><span class="glyphicon glyphicon-search"></span></button>
+				<form action="posts.php" method="get">
+					<div class="ui-widget">
+						<input id="search-box" name="query">
+					</div>
+					<button id="search-btn" onclick="loadByAjax()" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
 			</div>
 		</div>
 
@@ -60,8 +62,18 @@
  		<div id="container">
 
  			<?php
- 			$type = $_GET['id'];
+				$type = null;
+				if(isset($_GET['id'])){
+					$type = $_GET['id'];
+				}
 				$posts = $db_conn -> getAllPosts($type);
+				if(isset($_GET['query'])){
+					if($_GET['query'] != ""){
+						$name = $_GET['query'];
+						$posts = $db_conn->getSearchedPosts($name,$type);
+					}
+				}
+				
 
 				function LimitCharacter($description,$limit = 20)
 				{

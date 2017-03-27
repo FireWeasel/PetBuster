@@ -60,7 +60,8 @@
 
 		function getUserPost($username) {
 			$sql = "SELECT * FROM POST WHERE author=" ."\"$username\"".";";
-      $result = $this->conn->query($sql);
+			$result = $this->conn->query($sql);
+			$posts = "";
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
@@ -69,6 +70,23 @@
 			return $posts;
 
 		}
+		
+		function getSearchedPosts($name,$type) {
+            $sql = "SELECT * FROM POST WHERE title LIKE '%".$name."%';";
+            if($type === "Lost")
+            {
+                $sql = "SELECT * FROM POST WHERE type=" ."\"$type\""." AND title LIKE '%".$name."%';";
+            } elseif ($type === "Found") {
+                $sql = "SELECT * FROM POST WHERE type=" ."\"$type\" ". " AND title LIKE '%".$name."%';";
+            }
+            $result = $this->conn->query($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"]);
+                }
+            }
+            return $posts;
+        }
 
 		function addingPost($title, $description, $author,$type,$date) {
 			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\");";
