@@ -78,17 +78,23 @@
 				</form>
 				<hr>
 				<div class="comments">
-					<div class="comment-box">
-						<div class="row">
-							<div class="col col-lg-3">
-								<img src="../images/Post-image.jpg">
-							</div>
-							<div class="col col-lg-8">
-								<p><b>Author, date</b></p>
-								<p>Sample comment</p>
+					<?php
+						include_once "../entities/comment.php";
+						$comments = $db_conn -> getPostComments($id);
+						foreach($comments as $comment):
+					?>
+						<div class="comment-box">
+							<div class="row">
+								<div class="col col-lg-3">
+									<img src="../images/Post-image.jpg">
+								</div>
+								<div class="col col-lg-8">
+									<p><b><?php echo $comment->getAuthor() ?>, <?php echo $comment->getTime(); ?></b></p>
+									<p><?php echo $comment->getBody(); ?></p>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
  		</div>

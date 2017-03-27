@@ -1,6 +1,7 @@
 <?php
 	include "../entities/post.php";
 	include_once "../entities/user.php";
+	include_once "../entities/comment.php";
 
 	class DBConnection {
 
@@ -79,7 +80,6 @@
 				}
 			}
 			return $posts;
-
 		}
 
 		function addingPost($title, $description, $author,$type,$date) {
@@ -121,6 +121,17 @@
 		function addComment($body, $author, $post_id) {
 			$sql = "INSERT INTO COMMENT(BODY, AUTHOR, POST_ID) VALUES (\"$body\",\"$author\",\"$post_id\");";
 			return $this->conn->query($sql);
+		}
+
+		function getPostComments($post_id) {
+			$sql = "SELECT * FROM COMMENT WHERE POST_ID=$post_id;";
+      $result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$comments[] = new Comment($row["id"],$row["body"], $row["time"], $row["author"], $row["post_id"]);
+				}
+			}
+			return $comments;
 		}
 
 		function __destruct() {
