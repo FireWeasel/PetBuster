@@ -118,6 +118,11 @@
 			return $this->conn->query($sql)->fetch_assoc()["password"];
 		}
 
+		function addComment($body, $author, $post_id) {
+			$sql = "INSERT INTO COMMENT(BODY, AUTHOR, POST_ID) VALUES (\"$body\",\"$author\",\"$post_id\");";
+			return $this->conn->query($sql);
+		}
+
 		function __destruct() {
 			$this -> conn->close();
 		}

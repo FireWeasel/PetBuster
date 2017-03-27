@@ -35,7 +35,7 @@
  		</div>
 
  		<div id="container">
- 		<?php 
+ 		<?php
  		$id = $_GET["id"];
  		include "../engine/db_connect.php";
  				$db_conn = new DBConnection();
@@ -44,7 +44,7 @@
 			<div class="post-box">
 			<?php
 			include_once "../entities/post.php";
-			
+
 			$item = NULL;
 			foreach($posts as $post) {
     			if ($id == $post-> getID()) {
@@ -64,14 +64,14 @@
 					</div>
 				</div>
 				<hr>
-				<form action="#" id = "commentform">
+				<form action="../engine/comment_create.php?post_id=<?php echo $id; ?>" id="commentform" method="post">
 	 			<div class="comment-form">
 					<div class="row">
 						<div class="col col-lg-8">
-							<textarea id = "comment"></textarea><span id="commenterror" class="commenterror"></span>
+							<textarea name="comment-body" id="comment"></textarea><span id="commenterror" class="commenterror"></span>
 						</div>
 						<div class="col col-lg-4" style="height: 80px;">
-		 					<button href="post-view.php?id=<?php echo $id?>" class="btn btn-primary" id = "commentbtn">Submit</button>
+		 					<input type="submit" class="btn btn-primary" id="commentbtn"></input>
 						</div>
 					</div>
 	 			</div>
