@@ -35,29 +35,31 @@
 			}
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-			$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);} }
-			return $posts;
+				while($row = $result->fetch_assoc()) {
+					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+				}
 			}
+			return $posts;
+		}
 
 		function getPost($id) {
 			$sql = "SELECT * FROM POST WHERE id= " . $id . ";";
 			return $this->conn->query($sql);
 		}
 
-		function getUserPost($username)
-		{
+		function getUserPost($username) {
 			$sql = "SELECT * FROM POST WHERE author=" ."\"$username\"".";";
-            $result = $this->conn->query($sql);
+      $result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-			$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);} }
+				while($row = $result->fetch_assoc()) {
+					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+				}
+			}
 			return $posts;
-			
+
 		}
 
-		function addingPost($title, $description, $author,$type,$date)
-		{
+		function addingPost($title, $description, $author,$type,$date) {
 			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\");";
 			return $this->conn->query($sql);
 		}
@@ -66,17 +68,17 @@
 			$sql = "INSERT INTO USER(USERNAME, EMAIL, PASSWORD) VALUES (\"$username\",\"$email\",\"$password\");";
 			return $this->conn->query($sql);
 		}
-		
-		function getUser($id)
-        {
-            $sql = "SELECT * FROM USER WHERE id= " . $id . ";";
-            return $this->conn->query($sql)->fetch_assoc();
-        }
 
-        function getUserByUsername($username){
-            $sql = 'SELECT * FROM USER WHERE username = \''.$username.'\';';
-            return $this->conn->query($sql)->fetch_assoc();
-        }
+		function getUser($id) {
+        $sql = "SELECT * FROM USER WHERE id= " . $id . ";";
+        return $this->conn->query($sql)->fetch_assoc();
+    }
+
+    function getUserByUsername($username) {
+        $sql = 'SELECT * FROM USER WHERE username = \''.$username.'\';';
+        return $this->conn->query($sql)->fetch_assoc();
+    }
+
 		function getUsers() {
 			$sql = "SELECT * FROM USER;";
 			$result = $this->conn->query($sql);
@@ -85,7 +87,7 @@
 							$users[] = new User($row["id"],$row["username"], $row["email"], $row["password"]);
 			    }
 			}
-    			return $users;
+			return $users;
 		}
 
 		function getUserHashedPassword($username) {

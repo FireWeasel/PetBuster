@@ -1,4 +1,4 @@
- <?php
+<?php
 	session_start();
 	session_regenerate_id();
 	if(!isset($_SESSION['username'])) {
@@ -43,13 +43,13 @@
 					<label>Description:</label>
 					<textarea style="resize:none" name="post-description" id = "description" class="description"></textarea><span id="errordescription" class="errordescription"></span><br>
 					<label>Post type:</label>
-					<input type="radio" name="post-type" value="lost" checked>Lost
-					<input type="radio" name="post-type" value="found">Found<br>
+					<input type="radio" name="radio" value="Lost" checked>Lost
+					<input type="radio" name="radio" value="Found">Found<br>
 					<label>Date:</label>
-					<input type="text" id="datepicker"><br>
+					<input type="text" id="datepicker" name="date"><br>
 					<input type="submit" value="submit" class="btn btn-primary" id = "submitbutton">
 				</form>
-				
+
 			</div>
  		</div>
 
@@ -59,7 +59,7 @@
 		<script src="../js/jquery-ui.js"></script>
 		<script>
 		  $(function() {
-		    $("#datepicker").datepicker();
+		    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 		  });
   </script>
  	</body>
