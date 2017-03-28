@@ -6,12 +6,14 @@
     private $author;
     private $type;
     private $calendar;
+	private $image_location;
 
-    function __construct($id, $title, $description, $author) {
+    function __construct($id, $title, $description, $author, $image_location) {
       $this -> id = $id;
       $this -> title = $title;
       $this -> description = $description;
       $this -> author = $author;
+	  $this -> image_location = $image_location;
     }
 
     function getID() {
@@ -37,6 +39,9 @@
     function getDate()
     {
       return $this -> calendar;
+    }
+	function getImage(){
+      return $this -> image_location;
     }
   }
 ?>

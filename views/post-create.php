@@ -37,7 +37,7 @@
  		<div id="container">
  			<div id="container-wrapper">
  				<h1>Create post</h1><hr>
-				<form action="../engine/create_post.php" method="post" id = "form1">
+				<form action="../engine/create_post.php" method="post" enctype="multipart/form-data" id = "form1">
 					<label>Post title:</label>
 					<input type="text" name="post-title" id ="title" class="postname"><span id = "Errorpostname" class="errorpostname"></span><br>
 					<label>Description:</label>
@@ -47,6 +47,8 @@
 					<input type="radio" name="radio" value="Found">Found<br>
 					<label>Date:</label>
 					<input type="text" id="datepicker" name="date"><br>
+					<form action="../engine/upload_image.php" method="post" >
+                        <input type="file" name="file" id="file" class="upload1"><br>
 					<input type="submit" value="submit" class="btn btn-primary" id = "submitbutton">
 				</form>
 

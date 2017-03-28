@@ -37,7 +37,7 @@
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"], $row["image_location"]);
 				}
 			}
 			return $posts;
@@ -48,7 +48,7 @@
 			$result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"], $row["image_location"]);
 				}
 			}
 			var_dump($posts);
@@ -76,14 +76,14 @@
       $result = $this->conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"]);
+				$posts[] = new Post($row["id"],$row["title"], $row["description"], $row["author"], $row["type"], $row["calendar"], $row["image_location"]);
 				}
 			}
 			return $posts;
 		}
 
-		function addingPost($title, $description, $author,$type,$date) {
-			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\");";
+		function addingPost($title, $description, $author,$type,$date, $image_location) {
+			$sql = "INSERT INTO POST(TITLE,DESCRIPTION,AUTHOR,TYPE,CALENDAR, IMAGE_LOCATION) VALUES (\"$title\",\"$description\",\"$author\",\"$type\",\"$date\",\"$image_location\");";
 			return $this->conn->query($sql);
 		}
 
