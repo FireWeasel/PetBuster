@@ -47,7 +47,6 @@
 					<input type="radio" name="radio" value="Found">Found<br>
 					<label>Date:</label>
 					<input type="text" id="datepicker" name="date"><br>
-					<form action="../engine/upload_image.php" method="post" >
                         <input type="file" name="file" id="file" class="upload1"><br>
 					<input type="submit" value="submit" class="btn btn-primary" id = "submitbutton">
 				</form>
