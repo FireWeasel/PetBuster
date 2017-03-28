@@ -34,7 +34,7 @@
 				$userId = $value -> getId();
 				?>
 					<ul>
-					   <li class='active'><a href='../index.php'>Home</a></li>
+					   <li class='active'><a href='posts.php?id=main'>Home</a></li>
 					   <li><a href='posts.php?id=Lost'>Lost</a></li>
 					   <li><a href='posts.php?id=Found'>Found</a></li>
 						 <li><a href='post-create.php'>Create</a></li>
