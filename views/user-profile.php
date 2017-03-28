@@ -76,8 +76,9 @@ include_once ("../entities/user.php");
                 
         ?>
         <h1>User posts</h1>
-        <?php foreach ($posts as $post); ?>
         <?php 
+        foreach ($posts as $post):
+        
         $description = $post ->getDescription();
         $title = $post-> getTitle();
         ?>
@@ -96,6 +97,7 @@ include_once ("../entities/user.php");
                 </div>
             </div>
         </div>
+    <?php endforeach; ?>
     </div>
 </div>
 
