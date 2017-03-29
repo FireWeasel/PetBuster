@@ -7,6 +7,6 @@
   }
 
   $db_conn = new DBConnection();
-  $posts = $db_conn -> getPostsByTitle($title);
+  $posts = $db_conn -> getPostsByTitleAsObject($title);
   echo json_encode($posts);
 ?>

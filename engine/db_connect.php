@@ -55,6 +55,17 @@
 			return $posts;
 		}
 
+		function getPostsByTitleAsObject($title) {
+			$sql = "SELECT * FROM POST WHERE TITLE LIKE \"%$title%\";";
+			$result = $this->conn->query($sql);
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$posts[] = $row;
+				}
+			}
+			return $posts;
+		}
+
 		function getPostTitles() {
 			$sql = "SELECT title FROM POST;";
 			$result = $this->conn->query($sql);
@@ -126,6 +137,7 @@
 		function getPostComments($post_id) {
 			$sql = "SELECT * FROM COMMENT WHERE POST_ID=$post_id;";
       $result = $this->conn->query($sql);
+			$comments = array();
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					$comments[] = new Comment($row["id"],$row["body"], $row["time"], $row["author"], $row["post_id"]);

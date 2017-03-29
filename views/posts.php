@@ -91,7 +91,7 @@
  			 <hr>
  		     <div class="row">
  			 <div class="col col-lg-3">
- 			 	<?php 
+ 			 	<?php
  			 		$image = $value -> getImage();
  			 		if(!empty($image)) {
  			 			echo '<img style="width: 150px; height: 150px;" src="'.$image.'">';
@@ -118,19 +118,6 @@
 					});
 				});
   		</script>
-			<!-- TODO -->
-			<script type="text/javascript">
-				function loadByAjax() {
-					$.ajax({
-							type: "GET",
-							url: "../engine/search_posts.php",
-							data: "searchkey=" + $("#search-box").val(),
-							success: function(response_data) {
-									$('.container').html('');
-									console.log(response_data);
-							}
-					});
-				}
-			</script>
+			<script src="../js/search.js"></script>
    	</body>
 </html>
