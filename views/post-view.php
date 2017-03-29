@@ -57,7 +57,15 @@
 				<hr>
 				<div class="row">
 					<div class="col col-lg-3">
-						<img src="../images/Post-image.jpg">
+						<?php 
+		 			 		$image = $item -> getImage();
+		 			 		if(!empty($image)) {
+		 			 			echo '<img style="width: 150px; height: 150px;" src="'.$image.'">';
+		 			 		} else {
+		 			 			echo '<img style="width: 150px; height: 150px;" src="../images/Post-image.jpg">';
+		 			 		}
+		 			 	?>
+
 					</div>
 					<div class="col col-lg-8">
 						<p><?php echo $item -> getDescription(); ?></p>

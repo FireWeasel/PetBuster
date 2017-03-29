@@ -8,12 +8,14 @@
     private $calendar;
 	private $image_location;
 
-    function __construct($id, $title, $description, $author, $image_location) {
+    function __construct($id, $title, $description, $author, $type, $calendar, $image_location) {
       $this -> id = $id;
       $this -> title = $title;
       $this -> description = $description;
       $this -> author = $author;
-	  $this -> image_location = $image_location;
+      $this -> type = $type;
+      $this -> calendar = $calendar;
+	    $this -> image_location = $image_location;
     }
 
     function getID() {
