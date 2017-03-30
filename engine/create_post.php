@@ -17,7 +17,7 @@
         $file_error = $file['error'];
         $file_ext = explode('.', $file_name);
         $file_ext = strtolower(end($file_ext));
-        $allowed = array('png', 'jpg', 'jepg');
+        $allowed = array('png', 'jpg', 'jpeg');
 
         if(in_array($file_ext, $allowed)){
             if($file_error === 0){
