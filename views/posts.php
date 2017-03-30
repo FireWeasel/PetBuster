@@ -60,7 +60,7 @@
  		<div id="container">
 
  			<?php
- 			$type = $_GET['id'];
+ 				$type = $_GET['id'];
 				$posts = $db_conn -> getAllPosts($type);
 
 				function LimitCharacter($description,$limit = 20)

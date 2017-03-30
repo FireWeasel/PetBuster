@@ -35,5 +35,5 @@
   $db_conn = new DBConnection();
   $db_conn->addingPost($title, $description, $author, $type, $date, $file_destination);
 
-  header("Location:../views/post-create.php");
+  header("Location:../views/posts.php?id=main");
 ?>
